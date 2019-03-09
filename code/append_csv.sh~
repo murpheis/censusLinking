@@ -1,0 +1,14 @@
+#!/bin/bash
+
+rm ALL_LIBS.csv
+
+
+for f in *lib*.csv
+do
+
+ tail -n+2 $f
+ [ -n "$(tail -c1 $f)" ] && echo ""
+
+done >> ALL_LIBS.csv
+
+                     

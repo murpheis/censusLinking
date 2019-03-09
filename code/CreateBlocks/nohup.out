@@ -1,0 +1,4 @@
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   11356915   606.6   23596511  1260.2   11359124   606.7
+Vcells 1515085888 11559.2 2872500281 21915.5 2825513844 21557.0
+/usr/local/lib64/R/bin/BATCH: line 60: 39745 Terminated              ${R_HOME}/bin/R -f ${in} ${opts} ${R_BATCH_OPTIONS} > ${out} 2>&1

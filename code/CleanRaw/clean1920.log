@@ -1,0 +1,169 @@
+
+  ___  ____  ____  ____  ____ (R)
+ /__    /   ____/   /   ____/
+___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
+  Statistics/Data Analysis            StataCorp
+                                      4905 Lakeway Drive
+     MP - Parallel Edition            College Station, Texas 77845 USA
+                                      800-STATA-PC        http://www.stata.com
+                                      979-696-4600        stata@stata.com
+                                      979-696-4601 (fax)
+
+18-user 8-core Stata network perpetual license:
+       Serial number:  501506201068
+         Licensed to:  National Bureau of Economic Research
+                       Cambridge, MA 02138
+
+Notes:
+      1.  Stata is running in batch mode.
+      2.  Unicode is supported; see help unicode_advice.
+      3.  More than 2 billion observations are allowed; see help obs_advice.
+      4.  Maximum number of variables is set to 5000; see help set_maxvar.
+
+
+running /disk/admin/Linux-7-local/stata15/sysprofile.do ...
+
+. do clean1920.do 
+
+. * CLEAN 1920 FULL COUNT CENSUS DATA ON NBER SERVER
+. * FOR LINKING CENSUSES
+. * NEED CODE FROM RAN ABRAMITZKY AND LEAH BOUSTAN GROUP
+. * emily eisner, emily.eisner@berkeley.edu
+. 
+. 
+. * DIRECTORIES
+. global ados "/disk/homedirs/nber/eisere/censusLinking/code/BorrowedCode/ABE_a
+> lgorithm_code"
+
+. global home "/disk/homedirs/nber/eisere"
+
+. global temp "/homes/nber/eisere/bulk/cens1930.work/temp"
+
+. global input "/homes/nber/eisere/bulk/cens1930.work/input"
+
+. global output "/homes/nber/eisere/bulk/cens1930.work/output"
+
+. 
+. 
+. * LOOP OVER 100 FILES
+. 
+. foreach fi of numlist 1/100 {
+  2. 
+. * IMPORT DATA
+. *local fi 1
+. use bpl namefrst namelast age birthyr year race sex ///
+>     using /homes/data/cens1930/20160914/100files/us1920c_usa`fi'.dta, clear
+  3. 
+. * CLEAN NAMES 
+. *cd $ados
+. *abeclean namefrst namelast, sex(sex) initial(middleinitial) //fix nickname p
+> roblem?
+. 
+. 
+. * SAVE AS CSV
+. export delimited using $input/census1920_`fi'.csv, replace delim(tab)
+  4. 
+. }
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_1.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_2.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_3.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_4.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_5.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_6.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_7.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_8.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_9.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_10.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_11.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_12.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_13.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_14.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_15.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_16.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_17.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_18.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_19.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_20.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_21.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_22.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_23.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_24.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_25.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_26.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_27.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_28.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_29.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_30.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_31.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_32.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_33.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_34.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_35.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_36.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_37.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_38.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_39.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_40.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_41.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_42.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_43.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_44.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_45.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_46.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_47.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_48.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_49.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_50.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_51.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_52.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_53.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_54.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_55.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_56.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_57.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_58.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_59.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_60.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_61.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_62.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_63.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_64.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_65.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_66.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_67.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_68.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_69.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_70.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_71.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_72.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_73.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_74.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_75.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_76.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_77.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_78.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_79.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_80.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_81.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_82.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_83.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_84.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_85.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_86.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_87.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_88.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_89.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_90.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_91.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_92.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_93.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_94.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_95.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_96.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_97.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_98.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_99.csv saved
+file /homes/nber/eisere/bulk/cens1930.work/input/census1920_100.csv saved
+
+. 
+end of do-file
